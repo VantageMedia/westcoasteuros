@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "westcoasteuros-black-friday",
   "builds": [
     {
       "src": "**/*",
@@ -38,10 +37,5 @@
         }
       ]
     }
-  ],
-  "functions": {
-    "templates/index.black-friday.json": {
-      "runtime": "nodejs18.x"
-    }
-  }
+  ]
 }
