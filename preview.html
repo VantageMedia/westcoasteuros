@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" class="black-friday-theme">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>West Coast Euros - Black Friday Landing Page Preview</title>
+    
+    <!-- Black Friday Theme CSS -->
+    <link rel="stylesheet" href="assets/black-friday-theme.css">
+    <link rel="stylesheet" href="assets/section-black-friday-hero.css">
+    
+    <!-- Base styles -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--brand-galaxy-black, #1a1a1a);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .preview-notice {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section-heading {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-heading h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+        
+        .section-heading p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .card {
+            background: var(--brand-cream-white, #F5F5DC);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <!-- Preview Notice -->
+    <div class="preview-notice">
+        🚀 Black Friday Landing Page Preview - Live Testing Version
+    </div>
+    
+    <!-- Black Friday Hero Section -->
+    <section class="black-friday-hero">
+        <div class="black-friday-hero-background">
+            <div class="black-friday-hero-placeholder">
+                <div style="color: white; text-align: center;">
+                    <h1 style="font-size: 4rem; margin-bottom: 1rem;">🏎️</h1>
+                    <p style="font-size: 1.5rem;">Hero Background Image</p>
+                </div>
+            </div>
+            <div class="black-friday-hero-overlay"></div>
+        </div>
+        
+        <div class="black-friday-hero-content">
+            <div class="container">
+                <div class="black-friday-hero-text">
+                    <h1 class="black-friday-hero-main-heading">BLACK FRIDAY</h1>
+                    <h2 class="black-friday-hero-sub-heading">Your Modding Journey Just Got Cheaper</h2>
+                    <p class="black-friday-hero-description">
+                        Up to 70% OFF on premium BMW parts. Limited time. Limited stock.
+                    </p>
+                    
+                    <!-- Countdown Timer -->
+                    <div class="black-friday-countdown" data-countdown-date="2024-12-01T23:59:59">
+                        <div class="countdown-timer">
+                            <div class="countdown-item">
+                                <span class="countdown-number" data-days>15</span>
+                                <span class="countdown-label">Days</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-number" data-hours>12</span>
+                                <span class="countdown-label">Hours</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-number" data-minutes>45</span>
+                                <span class="countdown-label">Minutes</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-number" data-seconds>30</span>
+                                <span class="countdown-label">Seconds</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="black-friday-hero-cta">
+                        <a href="#" class="button">Shop Black Friday Deals</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Lifestyle Section -->
+    <section class="section color-background-1">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Build Your Dream BMW</h2>
+                <p>From carbon fiber aero to custom steering wheels, we're the go-to destination for BMW enthusiasts who demand quality and style.</p>
+            </div>
+            <div style="text-align: center;">
+                <a href="#" class="button">See What's Possible</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Deals Section -->
+    <section class="section color-background-2">
+        <div class="container">
+            <div class="section-heading">
+                <h2>🔥 HOTTEST DEALS</h2>
+                <p>These won't last long</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <h3>Carbon Fiber Spoiler</h3>
+                    <p style="color: #FFD700; font-size: 1.5rem; font-weight: 700;">$299.00</p>
+                    <p style="text-decoration: line-through; color: #999;">$599.00</p>
+                    <a href="#" class="button" style="margin-top: 1rem;">Add to Cart</a>
+                </div>
+                <div class="card">
+                    <h3>LED Headlights</h3>
+                    <p style="color: #FFD700; font-size: 1.5rem; font-weight: 700;">$1,199.00</p>
+                    <p style="text-decoration: line-through; color: #999;">$1,599.00</p>
+                    <a href="#" class="button" style="margin-top: 1rem;">Add to Cart</a>
+                </div>
+                <div class="card">
+                    <h3>Custom Steering Wheel</h3>
+                    <p style="color: #FFD700; font-size: 1.5rem; font-weight: 700;">$699.00</p>
+                    <p style="text-decoration: line-through; color: #999;">$999.00</p>
+                    <a href="#" class="button" style="margin-top: 1rem;">Add to Cart</a>
+                </div>
+                <div class="card">
+                    <h3>Performance Exhaust</h3>
+                    <p style="color: #FFD700; font-size: 1.5rem; font-weight: 700;">$899.00</p>
+                    <p style="text-decoration: line-through; color: #999;">$1,299.00</p>
+                    <a href="#" class="button" style="margin-top: 1rem;">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="section color-accent-1">
+        <div class="container">
+            <div class="section-heading">
+                <h2 style="color: white;">WHAT OUR COMMUNITY SAYS</h2>
+                <p style="color: #F5F5DC;">Real builders, real results</p>
+            </div>
+            <div class="grid">
+                <div class="card" style="background: rgba(255, 255, 255, 0.1); color: white;">
+                    <h3>Alex M., 22</h3>
+                    <p>"WCE parts transformed my F80. The quality is insane and the Black Friday deals are actually real deals, not fake markups."</p>
+                    <div style="color: #FFD700; margin-top: 1rem;">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="card" style="background: rgba(255, 255, 255, 0.1); color: white;">
+                    <h3>Marcus T., 19</h3>
+                    <p>"Been waiting all year for this sale. Finally got my dream carbon fiber kit for my G82. WCE never disappoints."</p>
+                    <div style="color: #FFD700; margin-top: 1rem;">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="card" style="background: rgba(255, 255, 255, 0.1); color: white;">
+                    <h3>Jake R., 25</h3>
+                    <p>"The customer service is top tier. They helped me pick the perfect setup for my build and the Black Friday pricing made it even better."</p>
+                    <div style="color: #FFD700; margin-top: 1rem;">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Urgency CTA Section -->
+    <section class="section color-accent-2">
+        <div class="container" style="text-align: center;">
+            <h2 style="color: white; margin-bottom: 1rem;">Don't Miss Out</h2>
+            <p style="color: #F5F5DC; margin-bottom: 2rem; font-size: 1.2rem;">Limited quantities. Limited time. These deals won't be back until next year.</p>
+            <a href="#" class="button">Shop All Black Friday Deals</a>
+        </div>
+    </section>
+    
+    <!-- Black Friday JavaScript -->
+    <script src="assets/black-friday-countdown.js"></script>
+    
+    <script>
+        // Simple demo functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 Black Friday Landing Page Preview Loaded');
+            console.log('🎨 Brand Colors: Toasted Yellow, Cream White, Galaxy Black');
+            console.log('📱 Mobile-First Design Active');
+            console.log('⏰ Countdown Timer Active');
+        });
+    </script>
+</body>
+</html>
