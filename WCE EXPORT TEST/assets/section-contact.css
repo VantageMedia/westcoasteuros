@@ -1,0 +1,42 @@
+/* Section - Contact
+=================================== */
+
+.section-contact-content-wrap {
+  margin-top: 3rem;
+}
+
+.section-contact-content-wrap .card-featured-banner {
+  height: auto;
+}
+
+.section-contact-content-wrap .card-featured-banner .card-info .button {
+  margin-top: 3rem;
+}
+
+.section-contact-wrap-sidebar-start {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-contact-wrap-sidebar-start .section-contact-content-wrap {
+  order: -1;
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 990px) {
+  .section-contact-wrap-sidebar {
+    display: grid;
+    grid-template-columns: 1fr 28rem;
+    grid-gap: calc(var(--grid-desktop-horizontal-spacing) * 2);
+    align-items: start;
+  }
+
+  .section-contact-wrap-sidebar-start {
+    grid-template-columns: 28rem 1fr;
+  }
+
+  .section-contact-content-wrap {
+    margin-top: 2.5rem;
+  }
+}

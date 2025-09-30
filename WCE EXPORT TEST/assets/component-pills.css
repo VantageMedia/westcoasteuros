@@ -1,0 +1,146 @@
+/* Component - Pills / Pill Navigation
+======================================= */
+
+.pill-nav {
+  display: flex;
+  align-items: center;
+  padding-inline-start: 1px;
+  grid-gap: 0.2rem;
+}
+
+.pill-nav-item {
+  flex: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.4rem;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  height: auto;
+  font-size: calc(var(--font-body-scale) * 1.4rem);
+  line-height: calc(1 / var(--font-body-scale));
+  background: rgba(var(--color-aux-background));
+  color: rgba(var(--color-aux-foreground));
+  box-shadow:
+    0 0 0 0.1rem rgba(var(--color-aux-border)),
+    0 3px 0 rgba(var(--color-aux-box-shadow));
+  position: relative;
+  border-radius: var(--buttons-radius);
+  font-family: var(--font-buttons-family);
+}
+
+.pill-nav-item .angle {
+  flex: none;
+}
+
+.setting-buttons-outline .pill-nav-item {
+  background-color: transparent;
+  color: currentColor;
+}
+
+@media (min-width: 990px) {
+  .pill-nav-item {
+    padding: 1.5rem 1.6rem;
+  }
+}
+
+.pill-nav-item:hover:not(.pill-nav-item-disabled) {
+  box-shadow:
+    0 0 0 0.2rem rgba(var(--color-aux-border)),
+    0 2px 0 rgba(var(--color-aux-box-shadow));
+  z-index: 2;
+}
+
+.setting-buttons-outline .pill-nav-item:hover:not(.pill-nav-item-disabled) {
+  background: transparent;
+  color: rgb(var(--color-aux-foreground));
+  box-shadow: 0 0 0 0.1rem rgb(var(--color-aux-border));
+}
+
+.pill-nav-item.is-active,
+.pill-nav-item.is-active:hover {
+  background-color: rgba(var(--color-button));
+  color: rgba(var(--color-button-text));
+  box-shadow:
+    0 0 0 0.1rem rgba(var(--color-button)),
+    0 2px 0 rgba(var(--color-aux-box-shadow));
+  z-index: 2;
+}
+
+.setting-buttons-outline .pill-nav-item.is-active {
+  background: transparent;
+  color: rgba(var(--color-button));
+  box-shadow:
+    0 0 0 0.1rem rgba(var(--color-button)),
+    0 2px 0 rgba(var(--color-aux-box-shadow));
+}
+
+.setting-buttons-outline .pill-nav-item:hover.is-active {
+  box-shadow:
+    0 0 0 0.2rem rgba(var(--color-button)),
+    0 2px 0 rgba(var(--color-aux-box-shadow));
+}
+
+.pill-nav-item-disabled {
+  cursor: not-allowed;
+}
+
+.pill-nav-item-disabled > * {
+  opacity: 0.5;
+}
+
+.pill-nav-slider {
+  grid-gap: 1rem;
+}
+
+.pill-nav-slider .pill-nav-item {
+  padding: 1.2rem 1.6rem;
+  width: 4.4rem;
+  height: 4.4rem;
+
+  font-size: calc(var(--font-body-scale) * 1.5rem);
+  background: rgba(var(--color-aux-background));
+  color: rgba(var(--color-aux-foreground));
+  box-shadow: 0 0 0 0.1rem rgb(var(--color-aux-border));
+}
+
+.pill-nav-slider-inline-nav {
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+
+.pill-nav-slider-inline-nav .pill-nav-item {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  background: rgb(var(--color-aux-background));
+  color: rgb(var(--color-aux-foreground));
+}
+
+.pill-nav-slider-inline-nav .pill-nav-item-prev {
+  inset-inline-start: 0;
+  transform: translateX(-1.5rem) translateY(-50%);
+}
+
+[dir="rtl"] .pill-nav-slider-inline-nav .pill-nav-item-prev {
+  transform: translateX(1.5rem) translateY(-50%);
+}
+
+.pill-nav-slider-inline-nav .pill-nav-item-next {
+  inset-inline-end: 0;
+  transform: translateX(1.5rem) translateY(-50%);
+}
+
+[dir="rtl"] .pill-nav-slider-inline-nav .pill-nav-item-next {
+  transform: translateX(-1.5rem) translateY(-50%);
+}
+
+.pill-nav-slider-offset-negative .pill-nav-item-prev {
+  inset-inline-start: 0;
+  transform: translateX(-1rem) translateY(calc(-50% - 1rem - 10px));
+}
+
+.pill-nav-slider-offset-negative .pill-nav-item-next {
+  transform: translateX(1rem) translateY(calc(-50% - 1rem - 10px));
+}

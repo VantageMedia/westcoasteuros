@@ -1,33 +1,18 @@
 {
-  "name": "westcoasteuros-black-friday",
+  "name": "westcoasteuros-theme",
   "version": "1.0.0",
-  "description": "Black Friday landing page for West Coast Euros - Modern, conversion-focused design for young car enthusiasts",
+  "description": "West Coast Euros Shopify Theme Development",
   "main": "index.js",
   "scripts": {
     "dev": "vercel dev",
-    "build": "echo 'Build complete'",
-    "deploy": "vercel --prod",
-    "preview": "vercel"
+    "build": "echo 'Building theme...'",
+    "deploy": "vercel --prod --yes",
+    "watch": "vercel dev --listen 3000"
   },
-  "keywords": [
-    "shopify",
-    "black-friday",
-    "landing-page",
-    "automotive",
-    "bmw",
-    "car-parts",
-    "ecommerce"
-  ],
+  "keywords": ["shopify", "theme", "westcoasteuros"],
   "author": "West Coast Euros",
-  "license": "UNLICENSED",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/VantageMedia/westcoasteuros.git"
-  },
-  "engines": {
-    "node": ">=18.0.0"
-  },
+  "license": "MIT",
   "devDependencies": {
-    "vercel": "^32.0.0"
+    "vercel": "^41.3.1"
   }
 }

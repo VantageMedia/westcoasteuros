@@ -1,0 +1,72 @@
+{% comment %}
+  Renders the region dropdown
+
+  Accepts:
+  - id: {String} Form id suffix. Optional
+  - classname: {String} Additional dropdown classes. Optional
+
+  Usage:
+  {% render 'collection-region' %}
+{% endcomment %}
+
+{{ 'component-dropdown.css' | asset_url | stylesheet_tag }}
+
+<localization-form>
+  {%- assign form_id = 'CountryForm' | append: id -%}
+  {%- form 'localization', id: form_id, class: 'localization-form' -%}
+    <div class="dropdown {{ classname }}">
+      <h2 class="visually-hidden" id="CountryLabel{{ id }}">
+        {{ 'localization.country_label' | t }}
+      </h2>
+      <button
+        class="dropdown-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="CountryList{{ id }}"
+        aria-describedby="CountryLabel{{ id }}"
+      >
+        <span class="dropdown-toggle-label">
+          {% if section.settings.enable_country_selector_flag %}
+            <span class="dropdown-toggle-label-flag">
+              {{ localization.country | image_url: width: 20 | image_tag: loading: 'lazy' }}
+            </span>
+          {% endif %}
+
+          {{- localization.country.iso_code }} ({{ localization.country.currency.iso_code }}
+          {{ localization.country.currency.symbol }})
+        </span>
+        {% render 'icons', icon: 'angle' %}
+      </button>
+
+      <div
+        class="dropdown-list-wrap color-background-1 background-complementary"
+        aria-hidden="true"
+      >
+        <div class="dropdown-list-wrap-scroll">
+          <ul class="dropdown-list" id="CountryList{{ id }}" role="list">
+            {%- for country in localization.available_countries -%}
+              <li class="dropdown-list-item">
+                <a
+                  class="dropdown-list-option"
+                  href="#"
+                  data-value="{{ country.iso_code }}"
+                >
+                  {% if section.settings.enable_country_selector_flag %}
+                    <span class="dropdown-list-option-flag">
+                      {{ country | image_url: width: 20 | image_tag: loading: 'lazy' }}
+                    </span>
+                  {% endif %}
+
+                  {{ country.name }} ({{ country.currency.iso_code }}
+                  {{ country.currency.symbol }})
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      </div>
+
+      <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+    </div>
+  {%- endform -%}
+</localization-form>
