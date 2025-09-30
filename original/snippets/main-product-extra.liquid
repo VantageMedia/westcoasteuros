@@ -1,0 +1,73 @@
+{% comment %}
+  Renders the product's "Extra / Social sharing" block.
+
+  Accepts:
+  - product: {Object} The product.
+  - block: {Object} The block.
+
+  Usage:
+  {% render 'main-product-extra', product: product, block: block %}
+{% endcomment %}
+
+<div class="product-info-extra" {{ block.shopify_attributes }}>
+  {% if block.settings.text != blank %}
+    <div class="product-info-extra-aux rte">
+      {{ block.settings.text }}
+    </div>
+  {% endif %}
+
+  {% if block.settings.show_facebook
+    or block.settings.show_twitter
+    or block.settings.show_linkedin
+  %}
+    <div class="product-info-extra-sharing">
+      <ul class="list-social">
+        {% if block.settings.show_facebook %}
+          <li class="list-social-item">
+            <a
+              href="https://www.facebook.com/sharer.php?u={{ shop.url }}{{ product.url | url_encode }}"
+              data-share-url="https://www.facebook.com/sharer.php?u="
+              target="_blank"
+              class="list-social-link"
+            >
+              <span class="visually-hidden">
+                {{- 'general.social.share_on_facebook' | t -}}
+              </span>
+              {% render 'icons', icon: 'facebook' %}
+            </a>
+          </li>
+        {% endif %}
+        {% if block.settings.show_twitter %}
+          <li class="list-social-item">
+            <a
+              href="https://x.com/share?url={{ shop.url }}{{ product.url | url_encode }}"
+              data-share-url="https://x.com/share?url="
+              target="_blank"
+              class="list-social-link"
+            >
+              <span class="visually-hidden">
+                {{- 'general.social.share_on_x' | t -}}
+              </span>
+              {% render 'icons', icon: 'x' %}
+            </a>
+          </li>
+        {% endif %}
+        {% if block.settings.show_linkedin %}
+          <li class="list-social-item">
+            <a
+              href="https://www.linkedin.com/sharing/share-offsite/?url={{ shop.url }}{{ product.url | url_encode }}"
+              data-share-url="https://www.linkedin.com/sharing/share-offsite/?url="
+              target="_blank"
+              class="list-social-link"
+            >
+              <span class="visually-hidden">
+                {{- 'general.social.share_on_linkedin' | t -}}
+              </span>
+              {% render 'icons', icon: 'linkedin' %}
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  {% endif %}
+</div>

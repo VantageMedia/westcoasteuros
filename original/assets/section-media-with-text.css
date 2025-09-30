@@ -1,0 +1,134 @@
+/* Section - Media with text
+================================ */
+.media-with-text .button {
+  margin-top: var(--spacing-base-1);
+}
+
+.media-with-text-grid {
+  display: block;
+}
+
+@media (min-width: 750px) {
+  .media-with-text-grid {
+    display: flex;
+  }
+
+  .media-with-text-grid.media-with-text-grid-reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.media-with-text-media-item {
+  margin-bottom: 2rem;
+}
+
+.media-with-text-media-item img {
+  border-radius: var(--border-radius-base);
+}
+
+.media-with-text-text-item {
+  border-radius: var(--border-radius-base);
+}
+
+@media (min-width: 750px) {
+  .media-with-text-media-item {
+    margin: 0;
+    width: 50%;
+    flex: none;
+  }
+}
+
+@media (min-width: 750px) {
+  .media-with-text-text-item {
+    width: 50%;
+    flex: none;
+    display: flex;
+    align-items: center;
+    padding-inline-start: 3rem;
+  }
+
+  .media-with-text-grid-reverse .media-with-text-text-item {
+    padding-inline-end: 3rem;
+    padding-inline-start: 0;
+  }
+}
+
+@media (min-width: 990px) {
+  .media-with-text-text-item {
+    padding: 3rem 5rem;
+  }
+
+  .media-with-text-grid-reverse .media-with-text-text-item {
+    padding: 3rem 5rem;
+  }
+}
+
+.media-with-text-caption {
+  margin: 2rem 0 0;
+  font-size: calc(var(--font-body-scale) * 1.4rem);
+}
+
+.media-with-text-content {
+  position: relative;
+}
+
+.media-with-text-heading a {
+  color: rgb(var(--color-accent-1));
+}
+
+.media-with-text-content-left {
+  text-align: start;
+}
+
+.media-with-text-content-center {
+  text-align: center;
+
+  .media-with-text-countdown {
+    justify-content: center;
+  }
+}
+
+.media-with-text-content-right {
+  text-align: end;
+
+  .media-with-text-countdown {
+    justify-content: flex-end;
+  }
+}
+
+.media-with-text-countdown {
+  margin: 2.5rem 0;
+  display: flex;
+  justify-content: flex-start;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.media-with-text-countdown .countdown-timer-expiration-message {
+  box-shadow: inset 0 0 0 1px rgb(var(--color-border));
+  padding: 1rem 2.5rem;
+  border-radius: var(--border-radius-base);
+
+  > * {
+    margin: 0;
+  }
+}
+
+.media-with-text-editor-hidden-note {
+  position: absolute;
+  top: 0;
+  inset-inline-end: 0;
+  padding: 1rem;
+  background: var(--color-error-background);
+  color: var(--color-error);
+  font-size: calc(var(--font-body-scale) * 1.3rem);
+  opacity: 0.85;
+  border-radius: var(--border-radius);
+  z-index: 5;
+}

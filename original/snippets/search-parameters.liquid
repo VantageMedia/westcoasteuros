@@ -1,0 +1,17 @@
+{% comment %}
+  Renders the hidden search form fields.
+
+  Accepts:
+  - form: {String} Optional. Form element ID
+
+  Usage:
+  {% render 'search-parameters', form: 'FacetsFilterForm' %}
+{% endcomment %}
+<input
+  type="hidden"
+  name="options[prefix]"
+  value="last"
+  {% if form != blank %}
+    form="{{ form }}"
+  {% endif %}
+>
