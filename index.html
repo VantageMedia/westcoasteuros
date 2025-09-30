@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>West Coast Euros - Theme Development</title>
-    <meta name="description" content="West Coast Euros Shopify Theme Development Environment">
+    <title>West Coast Euros - German Performance Parts</title>
+    <meta name="description" content="Premium German performance parts for BMW, Audi, VW, and Porsche. Carbon fiber aero, lighting upgrades, intakes, and exhausts.">
     <link rel="stylesheet" href="assets/base.css">
     <link rel="stylesheet" href="assets/custom-styles.css">
     <style>
+        /* West Coast Euros Theme Styling */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -39,101 +40,53 @@
             color: #FFD700;
         }
         
-        .dev-badge {
-            background: #FFD700;
-            color: #1a1a1a;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
         }
         
-        .hero {
-            text-align: center;
-            margin-bottom: 3rem;
-            background: white;
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        .nav-menu a:hover {
+            color: #FFD700;
+        }
+        
+        /* Hero Slideshow Section */
+        .hero-slideshow {
+            position: relative;
+            height: 600px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: white;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+            padding: 4rem 2rem;
+            z-index: 2;
         }
         
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
-            color: #FFD700;
+            color: white;
+            font-weight: bold;
         }
         
         .hero p {
             font-size: 1.2rem;
-            color: #666;
             margin-bottom: 2rem;
-        }
-        
-        .workflow {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .workflow-step {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        
-        .workflow-step h3 {
-            color: #1a1a1a;
-            margin-bottom: 1rem;
-        }
-        
-        .workflow-step p {
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        .file-structure {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-top: 2rem;
-        }
-        
-        .file-structure h3 {
-            color: #1a1a1a;
-            margin-bottom: 1rem;
-        }
-        
-        .file-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-        
-        .file-item {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 5px;
-            border-left: 4px solid #FFD700;
-        }
-        
-        .file-item strong {
-            color: #1a1a1a;
-        }
-        
-        .file-item p {
-            color: #666;
-            font-size: 0.9rem;
-            margin: 0.5rem 0 0 0;
+            opacity: 0.9;
         }
         
         .cta-button {
@@ -148,19 +101,347 @@
             transition: background 0.3s;
             text-decoration: none;
             display: inline-block;
-            margin: 1rem 0.5rem;
         }
         
         .cta-button:hover {
             background: #e6c200;
         }
         
+        /* Features Bar */
+        .features-bar {
+            background: #FFD700;
+            padding: 1.5rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: #1a1a1a;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .feature-icon {
+            font-size: 1.2rem;
+        }
+        
+        /* Section Styling */
+        .section {
+            padding: 4rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
+            font-weight: bold;
+        }
+        
+        /* New Arrivals Section */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+        
+        .product-price {
+            font-size: 1.2rem;
+            color: #FFD700;
+            font-weight: bold;
+        }
+        
+        /* Headlights Section */
+        .headlights-section {
+            background: #f8f9fa;
+            padding: 4rem 0;
+        }
+        
+        /* Popular Chassis Section */
+        .chassis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+        
+        .chassis-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .chassis-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .chassis-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+        
+        .chassis-button {
+            background: #1a1a1a;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .chassis-button:hover {
+            background: #333;
+        }
+        
+        /* Custom Steering Wheels Section */
+        .steering-wheels-section {
+            background: white;
+            padding: 4rem 0;
+        }
+        
+        .steering-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .steering-text h2 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+        }
+        
+        .steering-text p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        
+        .steering-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+        
+        /* WCE Downpipes Section */
+        .downpipes-section {
+            background: #f8f9fa;
+            padding: 4rem 0;
+        }
+        
+        /* Popular Products Section */
+        .popular-products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+        
+        /* Brands Section */
+        .brands-section {
+            background: white;
+            padding: 4rem 0;
+        }
+        
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+        
+        .brand-card {
+            background: #f8f9fa;
+            padding: 2rem 1rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .brand-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .brand-name {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+        
+        /* About Section */
+        .about-section {
+            background: #f8f9fa;
+            padding: 4rem 0;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 2rem;
+        }
+        
+        .about-content h2 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 2rem;
+        }
+        
+        .about-content p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-content strong {
+            color: #1a1a1a;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            background: white;
+            padding: 4rem 0;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+        
+        .testimonial-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .testimonial-text {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+        
+        .stars {
+            color: #FFD700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
         .footer {
             background: #1a1a1a;
             color: white;
-            padding: 2rem 0;
+            padding: 3rem 0 1rem;
             text-align: center;
-            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .footer p {
+            margin: 0.5rem 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .features-bar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .steering-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .product-grid, .chassis-grid, .popular-products-grid, .testimonials-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+            
+            .brands-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
         }
     </style>
 </head>
@@ -168,78 +449,275 @@
     <header class="header">
         <div class="nav-container">
             <div class="logo">West Coast Euros</div>
-            <div class="dev-badge">DEVELOPMENT MODE</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#shop">Shop By Brand</a></li>
+                    <li><a href="#bmw">BMW</a></li>
+                    <li><a href="#audi">Audi</a></li>
+                    <li><a href="#merch">Merch & Accessories</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <div class="container">
-        <div class="hero">
-            <h1>Theme Development Environment</h1>
-            <p>Edit your Shopify theme files and see live changes on this Vercel domain</p>
-            
-            <a href="#" class="cta-button" onclick="location.reload()">🔄 Refresh Page</a>
-            <a href="https://github.com/VantageMedia/westcoasteuros" class="cta-button" target="_blank">📁 View on GitHub</a>
-        </div>
-        
-        <div class="workflow">
-            <div class="workflow-step">
-                <h3>1. Edit Theme Files</h3>
-                <p>Edit your Shopify theme files directly in your code editor. All files are synced with GitHub.</p>
+    <main>
+        <!-- Hero Slideshow Section -->
+        <section class="hero-slideshow">
+            <div class="hero-content">
+                <h1>Your Modding Journey Begins Here.</h1>
+                <p>Premium German performance parts for BMW, Audi, VW, and Porsche. From carbon fiber aero to lighting upgrades, intakes, and exhausts.</p>
+                <a href="#shop" class="cta-button">Shop By Car</a>
             </div>
-            <div class="workflow-step">
-                <h3>2. Auto-Deploy</h3>
-                <p>Changes are automatically deployed to this Vercel domain when you push to GitHub.</p>
+        </section>
+
+        <!-- Features Bar -->
+        <section class="features-bar">
+            <div class="feature">
+                <span class="feature-icon">🚚</span>
+                <span>Free Shipping on Qualified Orders of $99+</span>
             </div>
-            <div class="workflow-step">
-                <h3>3. See Live Changes</h3>
-                <p>Refresh this page to see your changes live on the same domain.</p>
+            <div class="feature">
+                <span class="feature-icon">💳</span>
+                <span>0% Financing Available</span>
             </div>
-        </div>
-        
-        <div class="file-structure">
-            <h3>📁 Your Theme Files</h3>
-            <div class="file-list">
-                <div class="file-item">
-                    <strong>templates/</strong>
-                    <p>Page templates (index.json, product.json, etc.)</p>
+            <div class="feature">
+                <span class="feature-icon">🔒</span>
+                <span>Secure Checkout</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">👤</span>
+                <span>Customer Support Available</span>
+            </div>
+        </section>
+
+        <!-- New Arrivals Section -->
+        <section class="section">
+            <h2 class="section-title">New Arrivals!</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">Product Image</div>
+                    <h3 class="product-title">WCE S58 Downpipes</h3>
+                    <p class="product-price">$549.00</p>
                 </div>
-                <div class="file-item">
-                    <strong>sections/</strong>
-                    <p>Theme sections (slideshow, featured-collection, etc.)</p>
+                <div class="product-card">
+                    <div class="product-image">Product Image</div>
+                    <h3 class="product-title">Carbon Fiber Front Lip</h3>
+                    <p class="product-price">$799.00</p>
                 </div>
-                <div class="file-item">
-                    <strong>assets/</strong>
-                    <p>CSS, JavaScript, and image files</p>
+                <div class="product-card">
+                    <div class="product-image">Product Image</div>
+                    <h3 class="product-title">Mirror Caps</h3>
+                    <p class="product-price">$449.00</p>
                 </div>
-                <div class="file-item">
-                    <strong>layout/</strong>
-                    <p>Theme layouts (theme.liquid, etc.)</p>
-                </div>
-                <div class="file-item">
-                    <strong>snippets/</strong>
-                    <p>Reusable code snippets</p>
-                </div>
-                <div class="file-item">
-                    <strong>config/</strong>
-                    <p>Theme configuration files</p>
+                <div class="product-card">
+                    <div class="product-image">Product Image</div>
+                    <h3 class="product-title">CSL Style Grille</h3>
+                    <p class="product-price">$899.00</p>
                 </div>
             </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 2rem; padding: 2rem; background: #f8f9fa; border-radius: 10px;">
-            <h3 style="color: #1a1a1a; margin-bottom: 1rem;">🚀 Ready to Start Editing?</h3>
-            <p style="color: #666; margin-bottom: 1.5rem;">
-                Your fresh Shopify theme export is ready for development. Edit any file and push to GitHub to see live changes!
-            </p>
-            <p style="color: #FFD700; font-weight: bold;">
-                All your original theme files are preserved and ready for customization.
-            </p>
-        </div>
-    </div>
+        </section>
+
+        <!-- Headlights Section -->
+        <section class="headlights-section">
+            <div class="section">
+                <h2 class="section-title">Headlights</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image">Headlight Product</div>
+                        <h3 class="product-title">Adaptive Laser Style Headlights</h3>
+                        <p class="product-price">$1,299.00</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">Headlight Product</div>
+                        <h3 class="product-title">LED Headlight Upgrade</h3>
+                        <p class="product-price">$899.00</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">Headlight Product</div>
+                        <h3 class="product-title">Angel Eye Headlights</h3>
+                        <p class="product-price">$699.00</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">Headlight Product</div>
+                        <h3 class="product-title">OEM Style Headlights</h3>
+                        <p class="product-price">$599.00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Custom Steering Wheels Section -->
+        <section class="steering-wheels-section">
+            <div class="steering-content">
+                <div class="steering-text">
+                    <h2>Custom Steering Wheels - Builds Start at $700</h2>
+                    <p>Make your steering wheel vision a reality with our range of custom steering wheels. If you don't see a steering for your vehicle or would like more customization, contact us for a quote.</p>
+                    <a href="#steering" class="cta-button">Shop Steering Wheels</a>
+                </div>
+                <div class="steering-image">
+                    Steering Wheel Image
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Chassis Section -->
+        <section class="section">
+            <h2 class="section-title">Popular Chassis</h2>
+            <div class="chassis-grid">
+                <div class="chassis-card">
+                    <h3 class="chassis-title">BMW F80 M3</h3>
+                    <button class="chassis-button">Shop BMW F80 M3</button>
+                </div>
+                <div class="chassis-card">
+                    <h3 class="chassis-title">BMW G80 M3</h3>
+                    <button class="chassis-button">Shop BMW G80 M3</button>
+                </div>
+                <div class="chassis-card">
+                    <h3 class="chassis-title">BMW F30 3 Series</h3>
+                    <button class="chassis-button">Shop BMW F30 / F31 3 Series</button>
+                </div>
+                <div class="chassis-card">
+                    <h3 class="chassis-title">BMW F82 M4</h3>
+                    <button class="chassis-button">Shop BMW F82 / F83 M4</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- WCE Downpipes Section -->
+        <section class="downpipes-section">
+            <div class="section">
+                <h2 class="section-title">New Products - WCE Downpipes</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image">Downpipe Product</div>
+                        <h3 class="product-title">WCE S58 Downpipes w/ Flex Section</h3>
+                        <p class="product-price">$549.00</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">Downpipe Product</div>
+                        <h3 class="product-title">WCE S55 Downpipes w/ Flex Section</h3>
+                        <p class="product-price">$449.00</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">Downpipe Product</div>
+                        <h3 class="product-title">WCE N55 Downpipes</h3>
+                        <p class="product-price">$399.00</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">Downpipe Product</div>
+                        <h3 class="product-title">WCE B58 Downpipes</h3>
+                        <p class="product-price">$499.00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Products Section -->
+        <section class="section">
+            <h2 class="section-title">Popular Products</h2>
+            <div class="popular-products-grid">
+                <div class="product-card">
+                    <div class="product-image">Product Image</div>
+                    <h3 class="product-title">WCE Carbon Fiber</h3>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">Product Image</div>
+                    <h3 class="product-title">WCE Steering Wheels</h3>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">Product Image</div>
+                    <h3 class="product-title">WCE Exhausts</h3>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">Product Image</div>
+                    <h3 class="product-title">WCE Lighting</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brands Section -->
+        <section class="brands-section">
+            <div class="section">
+                <h2 class="section-title">Brands</h2>
+                <div class="brands-grid">
+                    <div class="brand-card">
+                        <div class="brand-name">KW Suspension</div>
+                    </div>
+                    <div class="brand-card">
+                        <div class="brand-name">Valvetronic Designs</div>
+                    </div>
+                    <div class="brand-card">
+                        <div class="brand-name">CSF Radiators</div>
+                    </div>
+                    <div class="brand-card">
+                        <div class="brand-name">Mastery of Art</div>
+                    </div>
+                    <div class="brand-card">
+                        <div class="brand-name">ARM Motorsports</div>
+                    </div>
+                    <div class="brand-card">
+                        <div class="brand-name">Eventuri</div>
+                    </div>
+                    <div class="brand-card">
+                        <div class="brand-name">Downstar</div>
+                    </div>
+                    <div class="brand-card">
+                        <div class="brand-name">Active Autowerke</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="about-content">
+                <h2>About Us</h2>
+                <p>At <strong>West Coast Euros</strong>, we're more than just an aftermarket parts store, we're a community built by enthusiasts, for enthusiasts.</p>
+                <p>What started as a passion for German performance cars has grown into a brand trusted by thousands of BMW, Audi, VW, and Porsche owners worldwide. From carbon fiber aero to lighting upgrades, intakes, and exhausts, we specialize in parts that transform your car while staying true to the lifestyle that unites us all.</p>
+                <p>But we're not just here to sell parts. Our builds, installs, and content are all about creating something bigger. We strive to bring the community together with our shop builds like the BMW 335i build series and our booths at events like <strong>Bimmer Invasion.</strong> We want to create a culture. One that pushes enthusiasts to make their build better. WCE is here to support you with quality parts, transparent service, and a community that has your back.</p>
+                <p>We believe cars bring people together, and that's exactly what <strong>West Coast Euros Racing Club</strong> is all about. From first-time modifiers to seasoned car builders, we're building a space where passion meets community.</p>
+                <p><strong>This is more than a shop. This is West Coast Euros. Why blend in?</strong></p>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <div class="section">
+                <h2 class="section-title">Testimonials</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">"If you're looking for ikon headlights for your F8x, this is definitely the place to get them from. Couldn't find them anywhere else for cheaper, and the quality of them is exactly like OEM. On top of that the customer service is the best I've ever received from any company and quickly helped me out with any problems I had. Highly recommend these guys and these headlights!"</p>
+                        <p class="testimonial-author">Sebastian Santangelo</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">"These guys at WCE are probably the best people I've ever worked with when it comes to communication and helping me select the part that I needed. Definitely will keep buying from these guys and can't wait to put my lights on my f82."</p>
+                        <p class="testimonial-author">John Ignacio Mendoza</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">"Great product. Really good color and great company to deal with"</p>
+                        <p class="testimonial-author">Gavin Foster</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">"I had originally bought a 'BYE' t-shirt when the website had shown there was 1 left. I was later emailed about the mistake twice because I had missed the first one then sent a follow-up later. They sent me a 'PCH' t-shirt with no extra charge and whomever I was in contact with over email was kind and helpful through the whole interaction. The shirt is wonderful quality as well, fits great and feels like it's worth more than what I paid for it. 10/10!"</p>
+                        <p class="testimonial-author">Lucas Plenert</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
-        <p><strong>West Coast Euros</strong> - Theme Development Environment</p>
-        <p>Connected to GitHub & Vercel for live development</p>
+        <div class="footer-content">
+            <p><strong>West Coast Euros</strong></p>
+            <p>Premium German Performance Parts</p>
+            <p>Contact: support@westcoasteuros.com</p>
+            <p>&copy; 2025 West Coast Euros. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
