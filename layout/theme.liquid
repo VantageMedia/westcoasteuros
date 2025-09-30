@@ -139,19 +139,9 @@
     </style>
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
-    
-    {% comment %} Black Friday Theme CSS {% endcomment %}
-    {% if template contains 'black-friday' or template == 'index' %}
-      {{ 'black-friday-theme.css' | asset_url | stylesheet_tag }}
-    {% endif %}
 
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'scripts.js' | asset_url }}" defer="defer"></script>
-    
-    {% comment %} Black Friday JavaScript {% endcomment %}
-    {% if template contains 'black-friday' or template == 'index' %}
-      <script src="{{ 'black-friday-countdown.js' | asset_url }}" defer="defer"></script>
-    {% endif %}
 
     {{ content_for_header }}
 
@@ -202,7 +192,7 @@
     {% endif %}
   </head>
 
-  <body class="template-{{ template.name }} setting-buttons-{{ settings.buttons_style }} setting-buttons-size-{{ settings.buttons_size }} {% if settings.hide_heading_ribbons == true %}setting-hide-heading-ribbons{% endif %} {% if template contains 'black-friday' or template == 'index' %}black-friday-theme{% endif %}">
+  <body class="template-{{ template.name }} setting-buttons-{{ settings.buttons_style }} setting-buttons-size-{{ settings.buttons_size }} {% if settings.hide_heading_ribbons == true %}setting-hide-heading-ribbons{% endif %}">
     <a class="skip-link visually-hidden visually-hidden-focusable" href="#MainContent">
       {{- 'accessibility.link_messages.skip_to_text' | t -}}
     </a>
